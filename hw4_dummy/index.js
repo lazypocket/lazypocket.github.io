@@ -1,3 +1,4 @@
+import padSequences from './sequence_utils';
 
 const HOSTED_URLS = {
   model:
@@ -122,14 +123,27 @@ class Classifier {
     const inputText =
         text.trim().toLowerCase().replace(/(\.|\,|\!)/g, '').split(' ');
     // Look up word indices.
-    const inputBuffer = tf.buffer([1, this.maxLen], 'float32');
-    for (let i = 0; i < inputText.length; ++i) {
-      const word = inputText[i];
-      inputBuffer.set(this.wordIndex[word], 0, i);
-      //console.log(word, this.wordIndex[word], inputBuffer);
-    }
-    const input = inputBuffer.toTensor();
-    //console.log(input);
+    const sequence = inputText.map(word => {
+      if (word in this.wordIndex) {
+        wordIndex = this.wordIndex[word];
+      } else {
+        wordIndex = 0;
+      }
+      return wordIndex;
+    });
+    
+    // Perform truncation and padding.
+    const paddedSequence = padSequences([sequence], this.maxLen);
+    const input = tf.tensor2d(paddedSequence, [1, this.maxLen]);
+    
+//     const inputBuffer = tf.buffer([1, this.maxLen], 'float32');
+//     for (let i = 0; i < inputText.length; ++i) {
+//       const word = inputText[i];
+//       inputBuffer.set(this.wordIndex[word], 0, i);
+//       //console.log(word, this.wordIndex[word], inputBuffer);
+//     }
+//     const input = inputBuffer.toTensor();
+//     //console.log(input);
 
     status('Running inference');
     const beginMs = performance.now();
