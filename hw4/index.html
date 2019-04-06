@@ -1,0 +1,53 @@
+
+<!doctype html>
+
+<body>
+  <style>
+    #textfield {
+      font-size: 120%;
+      width: 60%;
+      height: 200px;
+    }
+  </style>
+  <h1>
+    Text Classifier - Predict the Book Based on Sentence
+  </h1>
+  <hr>
+  <div class="create-model">
+    <button id="load-model" style="display:none">Load model</button>
+  </div>
+  <div>
+    <div>
+      <span>Vocabulary size: </span>
+      <span id="vocabularySize"></span>
+    </div>
+    <div>
+      <span>Max length: </span>
+      <span id="maxLen"></span>
+    </div>
+  </div>
+  <hr>
+  <div>
+    <select id="example-select" class="form-control">
+      <option value="example0">The_Adventures_of_Sherlock_Holmes</option>
+      <option value="example1">The_Adventures_of_Tom_Sawyer</option>
+      <option value="example2">Oliver_Twist</option>
+      <option value="example3">Les_Miserables</option>
+    </select>
+  </div>
+  <div>
+    <textarea id="text-entry" rows="4" cols="80"></textarea>
+  </div>
+  <hr>
+  <hr>
+    <div>
+      <span>Class Labels: </span>
+      <span id="classLabels"></span>
+    </div>
+  <div>
+    <span id="status">Standing by.</span>
+  </div>
+
+  <script src='https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js'></script>
+  <script src='index.js'></script>
+</body>
