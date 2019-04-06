@@ -8,13 +8,13 @@ const HOSTED_URLS = {
 
 const examples = {
   'example0':
-      'Now then, Mr. Cocksure,” said the salesman, “I thought that I was out of geese, but before I finish you’ll find that there is still one left in my shop.',
+      '"Now then, Mr. Cocksure," said the salesman, "I thought that I was out of geese, but before I finish you’ll find that there is still one left in my shop."',
   'example1':
       'TOM presented himself before Aunt Polly, who was sitting by an open window in a pleasant rearward apartment, which was bedroom, breakfast-room, dining-room, and library, combined.',
   'example2':
-      "Why not have kept him here among the rest, and made a sneaking, snivelling pickpocket of him at once?'",
+      'Mrs. Sowerberry looked up with an expression of considerable wonderment.',
   'example3':
-      'But, at all events, I took you for a certain Jean Valjean.”',
+      'But, at all events, I took you for a certain Jean Valjean.',
 };
 
 // The following padSequences function is taken from:
