@@ -72,6 +72,11 @@ function showMetadata(metadataJSON) {
       metadataJSON['vocabulary_size'];
   document.getElementById('maxLen').textContent =
       metadataJSON['max_len'];
+  const label_string = "Class labels: ";
+  for (var x in metadataJSON['class_labels']) {
+    label_string += x + ' ->  ' + metadataJSON['class_labels'][x] + ', '
+  }
+  document.getElementById('classLabels').textContent = label_string
 }
 
 function settextField(text, predict) {
