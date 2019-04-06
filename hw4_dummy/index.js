@@ -17,8 +17,8 @@ const examples = {
 };
 
 
-export const PAD_INDEX = 0;  // Index of the padding character.
-export const OOV_INDEX = 2;  // Index fo the OOV character.
+const PAD_INDEX = 0;  // Index of the padding character.
+//export const OOV_INDEX = 2;  // Index fo the OOV character.
 
 /**
  * Pad and truncate all sequences to the same length
@@ -31,7 +31,7 @@ export const OOV_INDEX = 2;  // Index fo the OOV character.
  * @param {'pre'|'post'} truncating Truncation type.
  * @param {number} value Padding value.
  */
-export function padSequences(
+function padSequences(
     sequences, maxLen, padding = 'pre', truncating = 'pre', value = PAD_INDEX) {
   // TODO(cais): This perhaps should be refined and moved into tfjs-preproc.
   return sequences.map(seq => {
