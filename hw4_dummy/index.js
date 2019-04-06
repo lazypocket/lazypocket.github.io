@@ -170,11 +170,10 @@ class Classifier {
         text.trim().toLowerCase().replace(/(\.|\,|\!)/g, '').split(' ');
     // Look up word indices.
     const sequence = inputText.map(word => {
+      let wordIndex = 0;
       if (word in this.wordIndex) {
         wordIndex = this.wordIndex[word];
-      } else {
-        wordIndex = 0;
-      }
+      } 
       return wordIndex;
     });
     
