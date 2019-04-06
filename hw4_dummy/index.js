@@ -1,4 +1,4 @@
-import padSequences from './sequence_utils';
+import {padSequences} from './sequence_utils';
 
 const HOSTED_URLS = {
   model:
