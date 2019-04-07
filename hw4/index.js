@@ -33,7 +33,7 @@ const PAD_INDEX = 0;  // Index of the padding character.
  * @param {number} value Padding value.
  */
 function padSequences(
-    sequences, maxLen, padding = 'pre', truncating = 'pre', value = PAD_INDEX) {
+    sequences, maxLen, padding = 'pre', truncating = 'post', value = PAD_INDEX) {
   // TODO(cais): This perhaps should be refined and moved into tfjs-preproc.
   return sequences.map(seq => {
     // Perform truncation.
